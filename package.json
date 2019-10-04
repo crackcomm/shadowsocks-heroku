@@ -4,12 +4,16 @@
   "dependencies": {
     "minimist": "^1.2.0",
     "https-proxy-agent": "^2.2.0",
-    "ws": "^1.0.1"
+    "ws": "^1.0.1",
+    "snyk": "^1.230.5"
   },
   "engines": {
     "node": "4.x"
   },
   "scripts": {
-    "start": "node server.js -b 0.0.0.0"
-  }
+    "start": "node server.js -b 0.0.0.0",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
